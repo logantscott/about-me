@@ -6,7 +6,7 @@ const quizmsg = document.getElementById('quizResults');
 button.addEventListener('click', () => {
 
     //quiz prompts & store answers
-    const uname = prompt("What is your name?") || "Human";
+    const uname = prompt('What is your name?') || 'Human';
     const ready = confirm(`${uname}, are you ready to take this quiz?`);
     if(!ready) return;
     const question1 = prompt(`${uname}, do you like the picture of the kitten?`);
