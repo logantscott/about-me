@@ -1,13 +1,17 @@
 export function isYes(ans) {
-    if (ans.toLowerCase() === 'yes' || ans.toLowerCase() === 'y') {
+    const yess = ['yes', 'y', 'ya', 'yah', 'yep', 'yup'];
+    if (yess.indexOf(ans) !== -1) {
         return true;
     } else return false;
-    // console.log("hiiiiiiii")
-};
+}
 
 export function isNo(ans) {
-    if (ans.toLowerCase() === 'no' || ans.toLowerCase() === 'n') {
+    const nos = ['no', 'n', 'nein', 'nah', 'neg', 'nope'];
+    if (nos.indexOf(ans) !== -1) {
         return true;
     } else return false;
-    // console.log("hiiiiiiii")
-};
+}
+
+export function lcase(ans) {
+    return ans.toLowerCase();
+}

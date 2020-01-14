@@ -1,6 +1,6 @@
 // IMPORT MODULES under test here:
 // import example from '../src/example.js';
-import isYes from '../src/is-yes.js';
+import { isYes, isNo, lcase } from '../src/is-yes.js';
 
 const test = QUnit.test;
 
@@ -21,7 +21,7 @@ test('Yes\'s', function(assert) {
     //ARRANGE - what is the expected result
     const expect = true;
     //ACT - get isyes of the input
-    const result = isYes(input);
+    const result = isYes(lcase(input));
     //ASSERT - assert the isyes with the expected
     assert.equal(result, expect);
     input = 'YES';
@@ -46,9 +46,9 @@ test('No\'s', function(assert) {
     //ARRANGE get the Input (guess what they might write)
     let input = 'No';
     //ARRANGE - what is the expected result
-    const expect = false;
+    const expect = true;
     //ACT - get isyes of the input
-    const result = isYes(input);
+    const result = isNo(lcase(input));
     //ASSERT - assert the isyes with the expected
     assert.equal(result, expect);
     input = 'NO';
