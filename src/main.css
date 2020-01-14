@@ -31,7 +31,7 @@ h1, h2, h3 {
 }
 
 main p {
-    margin: 6px 0 18px 0;
+    margin: 6px 0 12px 0;
 }
 
 h1 {
@@ -61,6 +61,7 @@ header * {
     width: 300px;
     position: relative;
     float: right;
+    margin: 0 12px;
 }
 
 #quizResults {
@@ -80,6 +81,13 @@ header * {
     right:6px;
 }
 
+blockquote {
+    padding: 0 12px;
+    margin: 12px 24px 24px 0;
+    font-style: italic;
+    color: #666;
+}
+
 .good {
     background: lightgreen;
 }
@@ -87,6 +95,13 @@ header * {
 .bad {
     background: lightcoral;
 }
+
+.lead blockquote {
+    padding: 0 0 24px 0;
+    color: #CCC;
+    font-style: italic;
+}
+
 /* 
 .grid-container {
     display: grid;
