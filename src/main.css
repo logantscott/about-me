@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color:#333;
+    max-width:800px;
+    margin:0 auto;
+    background-color: #EEE;
+    border-left: 1px solid #333;
+    border-right: 1px solid #333;
+}
+
+header {
+    overflow:auto;
+}
