@@ -7,6 +7,7 @@ html {
 }
 
 body {
+    position: relative;
     color:#515151;
     margin:0 auto;
     max-width:900px; 
@@ -15,11 +16,12 @@ body {
     border-left: 1px solid #515151;
     border-right: 1px solid #515151;
     box-shadow: 0px 0px 12px 0px #515151;
-    padding: 10px;
+    padding: 6px 12px;
 }
 
 main {
-    margin:0 auto;
+    margin:12px auto;
+    position: relative;
 }
 
 h1, h2, h3 {
@@ -30,18 +32,33 @@ h1, h2, h3 {
 header {
     background: #333;
     overflow:auto;
-    /* border-bottom: 1px solid #515151;
-    box-shadow: 0px 0px 12px 0px #515151; */
+    box-shadow: 0px 0px 6px 0px #515151;
+    border-radius: 12px;
+    padding: 0 12px;
 }
 
-#header {
-    margin:0 auto;
+header * {
+    color: #EEE;
 }
 
-/* main p:first-child {
-    margin: 0;
-    padding: 0;
-} */
+#mainimg {
+    height: 300px;
+    width: 300px;
+}
+
+#quizResults {
+    padding: 6px 12px;
+    margin-bottom: 12px;
+    font-weight: bold;
+    color: #000;
+    display: none;
+}
+
+#quizbutton {
+    position: absolute;
+    top:0px;
+    right:0px;
+}
 
 .good {
     background: lightgreen;

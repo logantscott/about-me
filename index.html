@@ -12,16 +12,18 @@
 
 <body>
 <header>
-    <div id="header">
-        <h1>Meeeeee</h1>
-        <p>intro paragraph</p>
-    </div>
+    <h1>Meeeeee</h1>
+    <p>intro paragraph</p>
 </header>
 <main>
-    <img src="http://www.placekitten.com/400/300/" />
+    <div id="quizResults"></div>
+    
+    <img id="mainimg" src="http://www.placekitten.com/300/300/" />
+    <br />
+    <button type="submit" id="quizbutton">Take a Quiz!</button>
     <h2>Section 1</h2>
     <p>section 1 content</p>
-    <h2>Section 2</h2>
+    <h3>Section 2</h3>
     <p>section 2 content</p>
     <ul>
         <li></li>
@@ -29,7 +31,7 @@
         <li></li>
         <li></li>
     </ul>
-    <h2>Section 3</h2>
+    <h3>Section 3</h3>
     <p>section 3 content</p>
     <ol>
         <li></li>
@@ -37,10 +39,8 @@
         <li></li>
         <li></li>
     </ol>
-    <button type="submit" id="quizbutton">Take a Quiz!</button>
+    <!-- <button type="submit" id="quizbutton">Take a Quiz!</button> -->
     <br /><br />
-    <div id="quizResults">Quiz results go here</div>
-    <br />
 </main>
     <script type="module" src="src/app.js"></script>
 </body>
