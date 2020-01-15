@@ -24,6 +24,10 @@ main {
     text-align: center;
 }
 
+#guessResponse {
+    font-weight: bold;
+}
+
 .good {
     background: lightgreen;
 }
@@ -32,6 +36,6 @@ main {
     background: lightcoral;
 }
 
-.warning {
+.invalid {
     background: lightgoldenrodyellow;
 }
