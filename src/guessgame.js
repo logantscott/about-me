@@ -26,7 +26,7 @@ function newMessage(str) {
 remaining.textContent = 4;
 newMessage('I\'ve picked a number. Can you guess it?');
 
-
+console.log(correctNumber);
 
 // guess guessed and button clicked, handle it!
 button.addEventListener('click', () => {
@@ -57,7 +57,7 @@ button.addEventListener('click', () => {
     // guess is valid and user hasn't lost, next check if win, else check lower or higher
     if (comparison === 0) {
         document.body.className = 'good';
-        newMessage(`You guessed my number in ${guesses} guesses, it was ${guess}! You WIN!`);
+        newMessage(`You guessed my number in ${guesses} ${guesses === 1 ? 'guess' : 'guesses'}, it was ${guess}! You WIN!`);
         return disabled();
     } else if (comparison === -1) {
         newMessage(`${guess} is too low. Guess HIGHER!`);
@@ -78,6 +78,7 @@ restart.addEventListener('click', () => {
 
     // pick a new number
     correctNumber = Math.ceil(Math.random() * (20));
+    console.log(correctNumber);
 
     // initialize variables and DOM
     guesses = 0;
