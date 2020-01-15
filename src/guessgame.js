@@ -5,21 +5,28 @@ let correctNumber = Math.ceil(Math.random() * (20));
 const input = document.getElementById('guess');
 const button = document.getElementById('guessButton');
 const restart = document.getElementById('restartButton');
-const response = document.getElementById('guessResponse');
+const message = document.getElementById('guessMessage');
 const remaining = document.getElementById('remaining');
 let guesses = 0;
 
-// initialize DOM
-remaining.textContent = 4;
-response.textContent = 'I\'ve picked a number. Can you guess it?';
-
-// called from return for win/loss, update guesses and disable form
+// function called from win/loss, update remaining and disable form
 function disabled() {
     remaining.textContent = '0';
     input.value = '';
     input.disabled = true;
     button.disabled = true;
 }
+
+// update messsage function
+function newMessage(str) { 
+    return message.textContent = str; 
+}
+
+// initialize DOM
+remaining.textContent = 4;
+newMessage('I\'ve picked a number. Can you guess it?');
+
+
 
 // guess guessed and button clicked, handle it!
 button.addEventListener('click', () => {
@@ -30,13 +37,11 @@ button.addEventListener('click', () => {
     // initialize body class
     document.body.className = '';
 
-    // console.log(compareNumbers(guess, correctNumber));
-    
     // validate the user input to be a number between 1 and 20, return if false
     if (comparison === false) {
         input.select();
         document.body.className = 'invalid';
-        return response.textContent = 'Invalid guess. Pick a number between 1 and 20!';
+        return newMessage('Invalid guess. Pick a number between 1 and 20!');
     }
 
     // valid guess, add a tally
@@ -45,19 +50,19 @@ button.addEventListener('click', () => {
     // check for loss condition first
     if (comparison !== 0 && 4 - guesses === 0){
         document.body.className = 'bad';
-        response.textContent = 'You have no guesses remaining! YOU LOSE!';
+        newMessage('You LOSE!');
         return disabled();
     }
 
     // guess is valid and user hasn't lost, next check if win, else check lower or higher
     if (comparison === 0) {
         document.body.className = 'good';
-        response.textContent = `You guessed my number in ${guesses} guesses, it was ${guess}! You WIN!`;
+        newMessage(`You guessed my number in ${guesses} guesses, it was ${guess}! You WIN!`);
         return disabled();
     } else if (comparison === -1) {
-        response.textContent = `${guess} is too low. Guess HIGHER!`;
+        newMessage(`${guess} is too low. Guess HIGHER!`);
     } else if (comparison === 1) {
-        response.textContent = `${guess} is too high. Guess LOWER!`;
+        newMessage(`${guess} is too high. Guess LOWER!`);
     }
 
     // update guesses remaining tally
@@ -80,5 +85,5 @@ restart.addEventListener('click', () => {
     input.value = '';
     document.body.className = '';
     input.select();
-    response.textContent = 'I\'ve picked a number. Can you guess it?';
+    newMessage('I\'ve picked a number. Can you guess it?');
 });
