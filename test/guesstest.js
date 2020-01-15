@@ -49,27 +49,35 @@ test('Test for falsy', function(assert) {
 
     //ASSERT
     assert.equal(result, expect);
+
     input = '12';
     result = compareNumbers(input, 12);
     assert.equal(result, expect);
+
     input = 99;
     result = compareNumbers(input, 12, 1, 20);
     assert.equal(result, expect);
+
     input = 0;
     result = compareNumbers(input, 12);
     assert.equal(result, expect);
+
     input = 'some string';
     result = compareNumbers(input, 12);
     assert.equal(result, expect);
+
     input = true;
     result = compareNumbers(input, 12);
     assert.equal(result, expect);
+
     input = [1, 2, 3];
     result = compareNumbers(input, 12);
     assert.equal(result, expect);
+
     input = 8;
     result = compareNumbers(input, 12, 9);
     assert.equal(result, expect);
+    
     input = 16;
     result = compareNumbers(input, 12, 1, 15);
     assert.equal(result, expect);
