@@ -50,7 +50,7 @@ button.addEventListener('click', () => {
     // check for loss condition first
     if (comparison !== 0 && 4 - guesses === 0){
         document.body.className = 'bad';
-        newMessage('You LOSE!');
+        newMessage(`My number was ${correctNumber}. You LOSE!`);
         return disabled();
     }
 
