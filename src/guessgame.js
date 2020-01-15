@@ -16,6 +16,7 @@ response.textContent = 'I\'ve picked a number. Can you guess it?';
 // called from return for win/loss, update guesses and disable form
 function disabled() {
     remaining.textContent = '0';
+    input.value = '';
     input.disabled = true;
     button.disabled = true;
 }
@@ -33,6 +34,7 @@ button.addEventListener('click', () => {
     
     // validate the user input to be a number between 1 and 20, return if false
     if (comparison === false) {
+        input.select();
         document.body.className = 'invalid';
         return response.textContent = 'Invalid guess. Pick a number between 1 and 20!';
     }
@@ -43,23 +45,24 @@ button.addEventListener('click', () => {
     // check for loss condition first
     if (comparison !== 0 && 4 - guesses === 0){
         document.body.className = 'bad';
-        response.textContent = 'You have 0 guesses remaining! YOU LOSE!';
+        response.textContent = 'You have no guesses remaining! YOU LOSE!';
         return disabled();
     }
 
     // guess is valid and user hasn't lost, next check if win, else check lower or higher
     if (comparison === 0) {
         document.body.className = 'good';
-        response.textContent = 'You guessed it! You WIN!';
+        response.textContent = `You guessed my number in ${guesses} guesses, it was ${guess}! You WIN!`;
         return disabled();
     } else if (comparison === -1) {
-        response.textContent = 'Guess is too low. Higher!';
+        response.textContent = `${guess} is too low. Guess HIGHER!`;
     } else if (comparison === 1) {
-        response.textContent = 'Guess is too high. Lower!';
+        response.textContent = `${guess} is too high. Guess LOWER!`;
     }
 
     // update guesses remaining tally
     remaining.textContent = 4 - guesses;
+    input.select();
 });
 
 // reset game button clicked, handle it!
@@ -76,5 +79,6 @@ restart.addEventListener('click', () => {
     remaining.textContent = 4;
     input.value = '';
     document.body.className = '';
+    input.select();
     response.textContent = 'I\'ve picked a number. Can you guess it?';
 });
