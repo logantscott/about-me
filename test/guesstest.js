@@ -52,8 +52,8 @@ test('Test for falsy', function(assert) {
     input = '12';
     result = compareNumbers(input, 12);
     assert.equal(result, expect);
-    input = 21;
-    result = compareNumbers(input, 12);
+    input = 99;
+    result = compareNumbers(input, 12, 1, 20);
     assert.equal(result, expect);
     input = 0;
     result = compareNumbers(input, 12);
