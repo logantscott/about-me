@@ -9,8 +9,10 @@ const message = document.getElementById('guessMessage');
 const remaining = document.getElementById('remaining');
 const clickcontainer = document.getElementById('container');
 const allowedguesses = 4;
-let low = 1;
-let high = 20;
+const min = 1;
+const max = 20;
+let low = min - 1;
+let high = max + 1;
 let guesses = 0;
 // test code for number spans
 const spans = document.getElementsByClassName('number');
@@ -46,8 +48,10 @@ button.addEventListener('click', () => {
     if (comparison === false) {
         input.select();
         document.body.className = 'invalid';
-        return newMessage('Invalid guess. Pick a number between 1 and 20!');
+        return newMessage(`Invalid guess. Pick a number between ${low + 1} and ${high - 1}!`);
     }
+
+    console.log(low - 1 + ' ' + (high + 1));
 
     // valid guess, add a tally
     guesses++;
@@ -90,8 +94,8 @@ restart.addEventListener('click', () => {
     // console.log(correctNumber);
 
     // initialize variables and DOM
-    low = 1;
-    high = 20;
+    low = min - 1;
+    high = max + 1;
     guesses = 0;
     remaining.textContent = allowedguesses;
     input.value = '';
