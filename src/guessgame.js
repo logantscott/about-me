@@ -9,6 +9,8 @@ const message = document.getElementById('guessMessage');
 const remaining = document.getElementById('remaining');
 const clickcontainer = document.getElementById('container');
 const allowedguesses = 4;
+let low = 1;
+let high = 20;
 let guesses = 0;
 // test code for number spans
 const spans = document.getElementsByClassName('number');
@@ -36,7 +38,7 @@ newMessage('I\'ve picked a number. Can you guess it?');
 button.addEventListener('click', () => {
     // declare variables
     const guess = Number(input.value);
-    const comparison = compareNumbers(guess, correctNumber);
+    const comparison = compareNumbers(guess, correctNumber, low, high);
     // initialize body class
     document.body.className = '';
 
@@ -64,8 +66,10 @@ button.addEventListener('click', () => {
         updateSpans(comparison, guess);
         return disabled();
     } else if (comparison === -1) {
+        low = guess;
         newMessage(`${guess} is too low. Guess HIGHER!`);
     } else if (comparison === 1) {
+        high = guess;
         newMessage(`${guess} is too high. Guess LOWER!`);
     }
 
@@ -86,6 +90,8 @@ restart.addEventListener('click', () => {
     // console.log(correctNumber);
 
     // initialize variables and DOM
+    low = 1;
+    high = 20;
     guesses = 0;
     remaining.textContent = allowedguesses;
     input.value = '';
