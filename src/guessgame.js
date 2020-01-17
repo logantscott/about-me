@@ -1,7 +1,6 @@
 import compareNumbers from './compareNumbers.js';
 
 // pick number and declare global variables
-let correctNumber = Math.ceil(Math.random() * (20));
 const input = document.getElementById('guess');
 const button = document.getElementById('guessButton');
 const restart = document.getElementById('restartButton');
@@ -14,6 +13,7 @@ const max = 20;
 let low = min - 1;
 let high = max + 1;
 let guesses = 0;
+let correctNumber = Math.ceil(Math.random() * (max));
 // test code for number spans
 const spans = document.getElementsByClassName('number');
 
