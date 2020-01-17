@@ -3,14 +3,14 @@
 }
 
 html {
-    background:#CCC;
+    background: #CCC;
 }
 
 body {
     position: relative;
-    color:#333;
-    margin:0 auto;
-    max-width:900px; 
+    color: #333;
+    margin: 0 auto;
+    max-width: 900px; 
     background-color: #EEE;
     border-left: 1px solid #333;
     border-right: 1px solid #333;
@@ -27,7 +27,7 @@ header h1 {
 }
 
 main {
-    margin:12px auto;
+    margin: 12px auto;
     position: relative;
     text-align: center;
 }
@@ -79,7 +79,7 @@ span.guessed, span.guessed:hover {
 
 span.good {
     background: lightgreen;
-    font-weight:bold;
+    font-weight: bold;
 }
 
 span.good:hover, span.bad:hover {
@@ -88,5 +88,5 @@ span.good:hover, span.bad:hover {
 
 span.bad {
     background: lightcoral;
-    font-weight:bold;
+    font-weight: bold;
 }
