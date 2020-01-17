@@ -13,7 +13,7 @@ button.addEventListener('click', () => {
     if (!ready) return;
     const question1 = prompt(`${uname}, do you like the picture of the kitten?`);
     const question2 = prompt(`${uname}, is this content?`);
-    const question3 = prompt(`${uname}, is Lorem Ipsum actual latin?`);
+    const question3 = prompt(`${uname}, is Lorem Ipsum actual Latin?`);
     alert('Tallying your results!');
 
     //scroll up after quiz complete. don't even check, just do it.
