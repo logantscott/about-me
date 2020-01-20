@@ -10,6 +10,8 @@ const clickcontainer = document.getElementById('container');
 const allowedguesses = 4;
 const min = 1;
 const max = 20;
+const selectInputToggle = false;
+
 let low = min - 1;
 let high = max + 1;
 let guesses = 0;
@@ -30,6 +32,11 @@ function newMessage(str) {
     return message.textContent = str; 
 }
 
+// select input
+function selectInput() {
+    if(selectInputToggle) input.select();
+}
+
 // initialize DOM
 remaining.textContent = allowedguesses;
 newMessage('I\'ve picked a number. Can you guess it?');
@@ -46,7 +53,7 @@ button.addEventListener('click', () => {
 
     // validate the user input to be a number between 1 and 20, return if false
     if (comparison === false) {
-        input.select();
+        selectInput();
         document.body.className = 'invalid';
         return newMessage(`Invalid guess. Pick a number between ${low + 1} and ${high - 1}!`);
     }
@@ -79,7 +86,7 @@ button.addEventListener('click', () => {
 
     // update guesses remaining tally
     remaining.textContent = allowedguesses - guesses;
-    input.select();
+    selectInput();
     updateSpans(comparison, guess);
 });
 
@@ -100,7 +107,7 @@ restart.addEventListener('click', () => {
     remaining.textContent = allowedguesses;
     input.value = '';
     document.body.className = '';
-    input.select();
+    selectInput();
     newMessage('I\'ve picked a number. Can you guess it?');
 
     // initialize number select
