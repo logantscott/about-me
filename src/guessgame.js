@@ -43,6 +43,10 @@ newMessage('I\'ve picked a number. Can you guess it?');
 
 // console.log(correctNumber);
 
+input.addEventListener('click', () => {
+    input.select();
+}
+
 // guess guessed and button clicked, handle it!
 button.addEventListener('click', () => {
     // declare variables
